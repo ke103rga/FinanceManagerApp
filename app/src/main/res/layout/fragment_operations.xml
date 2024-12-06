@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".operations.OperationsFragment">
+
+    <!-- ImageView слева от кнопки "Фильтры" -->
+    <ImageView
+        android:id="@+id/filter_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/filter_icon"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- Кнопка "Фильтры" -->
+    <Button
+        android:id="@+id/filters_button"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:text="Фильтры"
+        android:textColor="@color/black"
+        android:padding="8dp"
+        android:layout_toRightOf="@+id/filter_icon"
+    android:layout_marginTop="8dp" />
+
+    <!-- Кнопка "+" в верхнем правом углу -->
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="+"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filters_button"
+        android:layout_marginBottom="0dp">
+
+        <!-- RecyclerView для основной части страницы -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/operations_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager" />
+    </ScrollView>
+</RelativeLayout>

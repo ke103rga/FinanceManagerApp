@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FCA5B1"/> <!-- Цвет фона для расходов -->
+    <corners android:radius="16dp"/> <!-- Скругленные углы -->
+    <stroke
+        android:width="3dp"
+        android:color="#901a31"/> <!-- Серый цвет границы -->
+</shape>

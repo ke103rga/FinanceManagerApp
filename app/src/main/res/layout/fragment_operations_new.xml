@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/main_values_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom|center"
+    android:layout_marginTop="16dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/balance_text_view"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Баланс:\n 12 350"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="@drawable/main_value_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/income_text_view"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Доход:\n 12 350"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:background="@drawable/income_background" /> <!-- Новый фон для дохода -->
+
+        <TextView
+            android:id="@+id/expence_text_view"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Расход:\n 12 350"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:background="@drawable/expense_background" /> <!-- Новый фон для расходов -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/rest_text_view"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Остаток на конец периода:\n 12 350"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="@drawable/main_value_border" />
+</LinearLayout>

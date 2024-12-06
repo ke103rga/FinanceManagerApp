@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавление/Редактирование операции"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Название поля категории -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите категорию"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Поле для выбора категории -->
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:paddingLeft="2dp" />
+
+    <!-- Название поля даты -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Укажите дату"
+        android:textSize="16sp" />
+
+    <!-- Поле для даты -->
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="Выбрать дату"
+        android:paddingLeft="8dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+    <!-- Название поля суммы -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Введите сумму"
+        android:textSize="16sp" />
+
+    <!-- Поле для суммы -->
+    <EditText
+        android:id="@+id/value_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Сумма"
+        android:inputType="numberDecimal" />
+
+    <!-- Название поля комментария -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Добавьте комментарий"
+        android:textSize="16sp" />
+
+    <!-- Поле для комментария -->
+    <EditText
+        android:id="@+id/comment_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Комментарий" />
+
+    <!-- Кнопки для сохранения и отмены -->
+    <Button
+        android:id="@+id/save_operation_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Сохранить" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отмена"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Удалить"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

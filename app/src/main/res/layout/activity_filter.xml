@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Название поля категории -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите категорию"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Поле для выбора категории -->
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:paddingLeft="2dp" />
+
+    <!-- Название поля минимальной суммы -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Укажите минимальную сумму"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/min_value_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Минимальное значение"
+        android:inputType="numberDecimal"/>
+
+    <!-- Название поля максимальной суммы -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="4dp"
+        android:text="Укажите максимальную сумму"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/max_value_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Максимальное значение"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/apply_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Применить" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отмена" />
+</LinearLayout>
