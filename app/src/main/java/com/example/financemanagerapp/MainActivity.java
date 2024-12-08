@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -44,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
     Button selectPeriodButton;
     Button overviewButton;
     Button operationsButton;
+    ImageView reviewImageView;
+    ImageView operationsImageView;
+
+    // Переменная, которая будет указывать на то, какой раздел сейчас открыт
+    private static int currentSectionButtonId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("DB", "First time filling");
 
                 //            DatabaseInitializer.clearDatabase(MainActivity.this);
-                DatabaseInitializer.populateDatabase(MainActivity.this, false);
+                DatabaseInitializer.populateDatabase(MainActivity.this, true);
             });
 
             // Обновление значения в SharedPreferences
@@ -84,12 +90,18 @@ public class MainActivity extends AppCompatActivity {
 
         overviewButton = findViewById(R.id.overview_button);
         operationsButton = findViewById(R.id.operations_button);
+        reviewImageView = findViewById(R.id.review_image_view);
+        operationsImageView = findViewById(R.id.operations_image_view);
 
         overviewButton.setOnClickListener(v -> switchFragment(new ReviewFragment(), overviewButton));
         operationsButton.setOnClickListener(v -> switchFragment(new OperationsFragment(), operationsButton));
+        // Нажатие на иконку раздела приравнивается к нажатию на название раздела
+        reviewImageView.setOnClickListener(v -> switchFragment(new ReviewFragment(), overviewButton));
+        operationsImageView.setOnClickListener(v -> switchFragment(new OperationsFragment(), operationsButton));
 
         // Запустите фрагмент "Обзор" по умолчанию
         switchFragment(new ReviewFragment(), overviewButton);
+        currentSectionButtonId = overviewButton.getId();
 
         // Инициализация ViewModel
         periodViewModel = new ViewModelProvider(this).get(PeriodViewModel.class);
@@ -121,10 +133,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void switchFragment(Fragment fragment, Button selectedButton) {
+        //Ничего не происходит если надали на уже активную кнопку
+        if (selectedButton.getId() == currentSectionButtonId){ return; }
+
         // Заменяем текущий фрагмент
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container_view, fragment);
         transaction.commit();
+        // Обновляем информацию об активной кнопке
+        currentSectionButtonId = selectedButton.getId();
 
         // Установка стиля кнопок
         updateButtonTextStyle(selectedButton);
@@ -141,16 +158,4 @@ public class MainActivity extends AppCompatActivity {
         selectedButton.setTypeface(null, android.graphics.Typeface.BOLD);
     }
 
-
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        // Наблюдение за изменениями в period
-//        periodViewModel.getPeriod().observe(this, period -> {
-//            // Обновите текст кнопки при изменении периода
-//            selectPeriodButton.setText(period.getName());
-//        });
-//    }
 }
